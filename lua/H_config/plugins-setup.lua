@@ -31,7 +31,7 @@ return packer.startup(function(use)
   -- packer can manage itself
   use("wbthomason/packer.nvim")
 
---  use("nvim-lua/plenary.nvim") -- lua functions that many plugins use
+  use("nvim-lua/plenary.nvim") -- lua functions that many plugins use
 
 --  use("bluz71/vim-nightfly-guicolors") -- preferred colorscheme
   use{"svrana/neosolarized.nvim", requires={"tjdevries/colorbuddy.nvim"}}

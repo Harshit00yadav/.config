@@ -28,6 +28,7 @@ opt.cursorline = true
 -- appearance
 opt.title = true
 opt.termguicolors = true
+opt.incsearch = true
 opt.background = "dark"
 
 -- backspace

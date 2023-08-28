@@ -30,6 +30,7 @@ opt.title = true
 opt.termguicolors = true
 opt.incsearch = true
 opt.background = "dark"
+opt.showmode = false
 
 -- backspace
 opt.backspace = "indent,eol,start"

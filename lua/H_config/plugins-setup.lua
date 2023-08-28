@@ -34,6 +34,7 @@ return packer.startup(function(use)
   use("nvim-lua/plenary.nvim") -- lua functions that many plugins use
 
 --  use("bluz71/vim-nightfly-guicolors") -- preferred colorscheme
+  use("rebelot/kanagawa.nvim") -- kanagawa colorscheme
   use{"svrana/neosolarized.nvim", requires={"tjdevries/colorbuddy.nvim"}}
 
   use("christoomey/vim-tmux-navigator") -- tmux & split window navigation
@@ -50,11 +51,8 @@ return packer.startup(function(use)
   -- file explorer
   use("nvim-tree/nvim-tree.lua")
 
-  -- vs-code like icons
-  use("nvim-tree/nvim-web-devicons")
-
-  -- statusline
-  use("hoob3rt/lualine.nvim")
+  -- statusline with vs-code like icons
+  use{"nvim-lualine/lualine.nvim", requires = {"nvim-tree/nvim-web-devicons", opt = true}}
 
   -- fuzzy finding w/ telescope
 --  use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" }) -- dependency for better sorting performance

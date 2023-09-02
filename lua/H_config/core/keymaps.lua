@@ -14,3 +14,6 @@ keymap.set("n", "<leader>tp", ":tabp<CR>") -- go to previous tab
 
 -- nvim-tree
 keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
+
+keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+keymap.set("v", "K", ":m '<-2<CR>gv=gv")

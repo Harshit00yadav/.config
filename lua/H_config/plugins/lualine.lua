@@ -17,7 +17,7 @@ local colors = {
   grey   = '#303030',
 }
 
-local bubbles_theme = {
+local my_theme = {
   normal = {
     a = { fg = colors.black, bg = colors.blue },
     b = { fg = colors.darkblue, bg = colors.cyan },
@@ -39,30 +39,40 @@ local bubbles_theme = {
 
 require('lualine').setup {
   options = {
-    theme = bubbles_theme,
+    icons_enabled = true,
+    theme = 'kanagawa',
     component_separators = '|',
     section_separators = { left = '', right = '' }, -- 
+    component_separators = { left = '', right = '' }
   },
   sections = {
-    lualine_a = {
-      { 'mode', right_padding = 2 },
+    lualine_a = { 'mode' },
+    lualine_b = { 'branch' },
+    lualine_c = {{
+      'filename',
+      file_status = true,
+      path = 0 -- 0 = just file name
+    }},
+    lualine_x = {
+      { 'diagnostics', sources = { 'nvim_diagnostic' }, symbols = { error = '', warn = '', info = '', hint = 'ﯦ' } },
+      'encoding',
+      'filetype'
     },
-    lualine_b = { 'filename' },
-    lualine_c = { 'branch' },
-    lualine_x = {},
-    lualine_y = { 'filetype', 'progress' },
-    lualine_z = {
-      { 'location', separator = { left = '', right = '' }, left_padding = 2 },
-    },
+    lualine_y = { 'progress' },
+    lualine_z = { 'location' }
   },
   inactive_sections = {
-    lualine_a = { 'filename' },
+    lualine_a = {},
     lualine_b = {},
-    lualine_c = {},
-    lualine_x = {},
+    lualine_c = {{
+      'filename',
+      file_status = true,
+      path = 1 -- 1 = relative path
+    }},
+    lualine_x = { 'location' },
     lualine_y = {},
-    lualine_z = { 'location' },
+    lualine_z = {},
   },
   tabline = {},
-  extensions = {},
+  extensions = { 'fugitive' },
 }
